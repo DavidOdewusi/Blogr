@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    
+    <title>Frontend Mentor | [Blogr]</title>
+
+    <style>
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Ubuntu', sans-serif;
+        font-weight: 400;
+        color: hsl(207, 13%, 34%);
+        line-height: 1.7;
+      }
+
+      .heading {
+        font-family: 'Overpass', sans-serif;
+        font-weight: 600;
+        color: hsl(208, 49%, 24%);
+      }
+
+      h2 {
+        font-size: 1.8rem;
+      }
+
+      button {
+        border: none;
+        background-color: transparent;
+        color: #fff;
+        font-weight: 700;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+
+      .container {
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+      }
+
+/*  *//*  *//*  */
+/*   Header   */
+/*  *//*  *//*  */
+      .header {
+        background-image: url(images/bg-pattern-intro-desktop.svg), linear-gradient(to right bottom, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+        background-position: center;
+        height: 80vh;
+        grid-column: 1 / -1;
+        border-bottom-left-radius: 200px;
+        padding: 50px;
+        display: flex;
+        flex-direction: column;
+        color: #fff;
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        width: 75%;
+        margin: 0 auto;
+      }
+
+      .main-nav {
+        display: flex;
+        flex-basis: 50%;
+        margin-right: auto;
+        align-items: center;
+      }
+
+      .nav-logo-box {
+        margin-right: auto;
+      }
+
+      .nav-list {
+        list-style: none;
+        display: flex;
+      }
+
+      .nav-list li:not(:last-child) {
+        margin-right: 1.5rem;
+      }
+
+      .nav-link:link,
+      .nav-link:visited {
+        text-decoration: none;
+        color: #fff;
+        transition: all .3s;
+      }
+
+      .nav-link:hover,
+      .nav-link:active {
+        text-decoration: underline;
+      }
+
+      .nav-link:active span img {
+        transform: rotate(180deg);
+      }
+
+      .nav-cta button:not(:last-child) {
+        margin-right: 1rem;
+      }
+
+      .cta {
+        text-align: center;
+        /* margin: 0 auto; */
+        align-self: center;
+      }
+
+      .cta h1 {
+        color: #fff;
+        font-size: 3.5rem;
+        font-weight: 400;
+        margin-top: 9rem;
+      }
+
+      .button-box {
+        margin-top: 2rem;
+      }
+
+      .button-box button:not(:last-child) {
+        margin-right: 1.5rem;
+      }
+
+      .button-box button:last-child {
+        padding: .8rem .9rem;
+        border: 1px solid #fff;
+        border-radius: 50px;
+        transition: all .3s;
+      }
+
+      .button-box button:last-child:hover,
+      .button-box button:last-child:active {
+        background-color: #fff;
+        color: hsl(356, 100%, 66%);
+      }
+
+      .btn {
+        background-color: #fff;
+        color: hsl(356, 100%, 66%);
+        border-radius: 50px;
+        transition: all .3s;
+      }
+
+      .btn:hover,
+      .btn:active {
+        background-color: hsl(355, 100%, 74%);
+        color: #fff;
+      }
+
+      .btn-cta {
+        padding: 1rem 2.5rem;
+      }
+
+      .btn-cta2 {
+        padding: .8rem .9rem;
+      }
+
+/*  *//*  *//*  */
+/* Section Intro */
+/*  *//*  *//*  */
+      .section-intro {
+        /* background-color: seagreen; */
+        grid-column: 2 / -1;
+        padding: 10rem 0 12rem;
+        position: relative;
+      }
+
+      .intro-heading {
+        text-align: center;
+        margin-bottom: 5rem;
+      }
+
+      .intro-text {
+        width: 50%;
+      }
+
+      .text-1 h3 {
+        margin-bottom: 15px;
+      }
+
+      .text-1:first-child {
+        margin-bottom: 50px;
+      }
+
+      .intro-image {
+        position: absolute;
+        top: 70px;
+        right: -185px;
+      }
+
+      .intro-img {
+        width: 43rem;
+      }
+
+/*  *//*  *//*  */
+/* Section phone */
+/*  *//*  *//*  */
+      .section-phone {
+        background-image: url(images/bg-pattern-circles.svg), linear-gradient(to top right, hsl(237, 17%, 21%), hsl(237, 23%, 32%));
+        background-repeat: no-repeat;
+        background-position-y: bottom;
+        grid-column: 1 / -1;
+        border-bottom-left-radius: 200px;
+        border-top-right-radius: 200px;
+        height: 23rem;
+      }
+
+      .phone {
+        display: flex;
+        width: 75%;
+        margin: 0 auto;
+        align-items: center;
+        gap: 1rem;
+        height: 100%;
+      }
+
+      .phone-image, .phone-text {
+        flex-basis: 100%;
+      }
+
+      .phone-image {
+        transform: translateY(1%);
+      }
+
+      .phone-img {
+        width: 80%;
+      }
+
+      .phone-text {
+        color: hsl(240, 2%, 79%);
+      }
+
+      .phone-text h2 {
+        color: #fff;
+      }
+
+/*  *//*  *//*  */
+/* Section free */
+/*  *//*  *//*  */
+      .section-free {
+        grid-column: 1 / span 7;
+        padding: 10rem 0 20rem;
+        position: relative;
+      }
+
+      .free-image {
+        position: absolute;
+        top: 70px;
+        left: -14.5%;
+        /* width: 43rem; */
+      }
+
+      .free-img {
+        width: 50rem;
+      }
+
+      .free-text {
+        margin-top: 2.5rem;
+        width: 50%;
+        margin-left: auto;
+      }
+
+      .text-f:not(:last-child) {
+        margin-bottom: 50px;
+      }
+
+/*  *//*  *//*  */
+/*   Footer   */
+/*  *//*  *//*  */
+
+      .footer {
+        background-color: hsl(240, 10%, 16%);
+        grid-column: 1 / -1;
+        padding: 5rem 0 .5rem;
+        border-top-right-radius: 200px;
+        color: hsl(240, 2%, 79%);
+      }
+
+      .footer-content {
+        width: 75%;
+        margin: 0 auto;
+        display: flex;
+        margin-bottom: 45px;
+      }
+
+      .footer-nav {
+        flex-basis: 75%;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .footer-nav h4 {
+        color: #fff;
+        margin-bottom: 20px;
+      }
+
+      .footer-logo-box {
+        flex-basis: 20%;
+        margin-right: auto;
+      }
+
+      .footer-list {
+        list-style: none;
+      }
+
+      .footer-list-item {
+        margin-bottom: 5px;
+      }
+
+      .footer-link:link,
+      .footer-link:visited {
+        text-decoration: none;
+        color: hsl(240, 2%, 79%);
+        font-size: .9rem;
+      }
+
+      .footer-link:hover,
+      .footer-link:active {
+        text-decoration: underline;
+      }
+
+      .attribution { font-size: 10px; text-align: center; }
+      .attribution a { color: hsl(228, 41%, 58%); }
+
+      @media screen and (max-width: 1250px) {
+        .section-phone { height: 20rem; }
+
+        .main-nav { flex-basis: 55%; }
+
+        .free-image { left: -20%; }
+      }
+      @media screen and (max-width: 1150px) {
+        .section-phone { height: 18rem; }
+
+        .intro-image {
+          top: 90px;
+          right: -170px;
+        }
+
+        .intro-img { width: 41rem; }
+
+        .free-image { left: -20% }
+
+        .free-img { width: 45rem; }
+      }
+
+      @media screen and (max-width: 1080px) {
+        html { font-size: 14px; }
+
+        .header { border-bottom-left-radius: 150px; }
+
+        .btn-cta { padding: .8rem 2rem; }
+
+        .section-phone {
+          border-bottom-left-radius: 150px;
+          border-top-right-radius: 150px;
+        }
+
+        .section-free { padding-bottom: 10rem; }
+
+        .intro-image { top: 120px; }
+
+        .free-image { left: -18%; }
+
+        .footer { border-top-right-radius: 150px; }
+      }
+
+      @media screen and (max-width: 1000px) {
+        .section-phone { background-position-y: bottom; }
+
+        .free-image { left: -21%; }
+
+        .main-nav { flex-basis: 60%; }
+      }
+
+      @media screen and (max-width: 900px) {
+        html { font-size: 13px; }
+
+         h2 { font-size: 1.6rem; }
+
+        .section-phone { height: 16.5rem; }
+      }
+
+    </style>
+  </head>
+  <body>
+    
+    <div class="container">
+
+      <header class="header">
+        <nav class="nav">
+          <div class="main-nav">
+            <div class="nav-logo-box">
+              <img src="images/logo.svg" alt="Logo" class="nav-logo">
+            </div>
+  
+            <ul class="nav-list">
+              <li class="nav-list-item"><a href="index.html" class="nav-link">Product <span><img src="images/icon-arrow-light.svg" alt="Arrow" class="arrow-light"></span></a></li>
+              <li class="nav-list-item"><a href="index.html" class="nav-link">Company <span><img src="images/icon-arrow-light.svg" alt="Arrow" class="arrow-light"></span></a></li>
+              <li class="nav-list-item"><a href="index.html" class="nav-link">Connect <span><img src="images/icon-arrow-light.svg" alt="Arrow" class="arrow-light"></span></a></li>
+            </ul>
+          </div>
+
+          <div class="nav-cta">
+            <button type="button">Login</button>
+            <button type="button" class="btn btn-cta">Sign up</button>
+          </div>
+
+          <div class="menu"></div>
+        </nav>
+
+        <div class="cta">
+          <div class="header-text">
+            <h1>A modern publishing platform</h1>
+            <p>Grow your audience and build your online brand</p>
+          </div>
+          <div class="button-box">
+            <button type="button" class="btn btn-cta2">Start for Free</button>
+            <button type="button" class="btn-more">Learn more</button>
+          </div>
+        </div>
+      </header>
+
+      <section class="section-intro">
+        <div class="intro-heading">
+          <h2 class="heading">Designed for the future</h2>
+        </div>
+        <div class="intro">
+          <div class="intro-text">
+            <div class="text-1">
+              <h3 class="heading">Introducing an extensible editor</h3>
+              <p>
+                Blogr features an exceedingly intuitive interface which lets you focus on one thing: creating content. 
+                The editor supports management of multiple blogs and allows easy manipulation of embeds such as images, 
+                videos, and Markdown. Extensibility with plugins and themes provide easy ways to add functionality or 
+                change the looks of a blog.
+              </p>
+            </div>
+            <div class="text-1">
+              <h3 class="heading">Robust content management</h3>
+              <p>
+                Flexible content management enables users to easily move through posts. Increase the usability of your blog 
+                by adding customized categories, sections, format, or flow. With this functionality, you’re in full control.
+              </p>
+            </div>
+          </div>
+          <div class="intro-image">
+            <img src="images/illustration-editor-desktop.svg" alt="Illustrator Editor Desktop" class="intro-img">
+          </div>
+        </div>
+      </section>
+
+      <section class="section-phone">
+        <div class="phone">
+          <div class="phone-image">
+            <img src="images/illustration-phones.png" alt="Phone" class="phone-img">
+          </div>
+          <div class="phone-text">
+            <h2 class="heading">State of the Art Infrastructure</h2>
+            <p>  With reliability and speed in mind, worldwide data centers provide the backbone for ultra-fast connectivity. 
+            This ensures your site will load instantly, no matter where your readers are, keeping your site competitive.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-free">
+        <div class="free">
+          <div class="free-image">
+            <img src="images/illustration-laptop-desktop.svg" alt="Illustrator Editor Desktop" class="free-img">
+          </div>
+          <div class="free-text">
+            <div class="text-f">
+              <h3 class="heading">Free, open, simple</h3>
+              <p>
+                Blogr is a free and open source application backed by a large community of helpful developers. It supports 
+                features such as code syntax highlighting, RSS feeds, social media integration, third-party commenting tools, 
+                and works seamlessly with Google Analytics. The architecture is clean and is relatively easy to learn.
+              </p>
+            </div>
+            <div class="text-f">
+              <h3 class="heading">Powerful tooling</h3>
+              <p>
+                Batteries included. We built a simple and straightforward CLI tool that makes customization and deployment a breeze, but
+                capable of producing even the most complicated sites.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="footer-content">
+          <div class="footer-logo-box">
+            <img src="images/logo.svg" alt="Logo" class="footer-logo">
+          </div>
+          <div class="footer-nav">
+            <div class="product">
+              <h4 class="heading">Product</h4>
+              <ul class="footer-list">
+                <li class="footer-list-item"><a href="" class="footer-link">Overview</a></li>
+                <li class="footer-list-item"><a href="" class="footer-link">Pricing</a></li>
+                <li class="footer-list-item"><a href="" class="footer-link">Marketplace</a></li>
+                <li class="footer-list-item"><a href="" class="footer-link">Features</a></li>
+                <li class="footer-list-item"><a href="" class="footer-link">Integrarions</a></li>
+              </ul>
+            </div>
+            <div class="Company">
+              <h4 class="heading">Company</h4>
+              <ul class="footer-list">
+                <li class="footer-list-item"><a href="" class="footer-link">About</a></li>
+                <li class="footer-list-item"><a href="" class="footer-link">Team</a></li>
+                <li class="footer-list-item"><a href="" class="footer-link">Blog</a></li>
+                <li class="footer-list-item"><a href="" class="footer-link">Careers</a></li>
+              </ul>
+            </div>
+            <div class="Connect">
+              <h4 class="heading">Connect</h4>
+              <ul class="footer-list">
+                <li class="footer-list-item"><a href="" class="footer-link">Contact</a></li>
+                <li class="footer-list-item"><a href="" class="footer-link">Newsletter</a></li>
+                <li class="footer-list-item"><a href="" class="footer-link">LinkedIn</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="attribution">
+          Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+          Coded by <a href="#">David Odewusi</a>.
+        </div>
+      </footer>
+
+    </div>
+
+  </body>
+</html>
